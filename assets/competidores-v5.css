@@ -1,0 +1,39 @@
+/* Small animated corner companion; the competitors' photographs stay intact. */
+.fighter-stage { scroll-margin-top: 100px; overflow: hidden; }
+.fighter-portrait { gap: 8px; }
+.fighter-portrait > img { width: calc(100% - 100px); min-width: 0; }
+.fighter-pixel-corner { flex: 0 0 92px; align-self: flex-end; margin-bottom: 24px; display: grid; place-items: center; }
+.fighter-pixel-sprite { display: block; width: 92px; height: 147px; background: url('/assets/competidores/muay-thai-sprite.png') 0 0 / 400% 100% no-repeat; image-rendering: pixelated; animation: fighter-combo 1.6s steps(4) infinite; }
+.fighter-pixel-floor { width: 70px; height: 3px; margin-top: 8px; background: #be944e; box-shadow: 0 0 18px #cd394855; }
+@keyframes fighter-combo { to { background-position: 133.333333% 0; } }
+.motion-paused .fighter-pixel-sprite { animation-play-state: paused; }
+.fighter-motion-controls { display: flex; justify-content: flex-end; margin-top: 14px; }
+.fighter-motion-toggle { font: inherit; font-size: .875rem; min-height: 44px; padding: 9px 14px; border: 1px solid #695353; border-radius: 3px; background: #171318; color: #d8ccbe; cursor: pointer; }
+.fighter-motion-toggle:hover { background: #2c1b21; border-color: #d34b57; }
+.fighter-motion-toggle:focus-visible { outline: 3px solid #f1d7a3; outline-offset: 4px; }
+.fighter-choice { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.fighter-choice .arcade-avatar { transition: filter .2s ease; }
+.fighter-choice:hover .arcade-avatar { filter: brightness(1.15); }
+.fighters-heading > p, .fighter-info > p:not(.fighters-eyebrow) { font-size: 1rem; }
+.fighters-eyebrow { font-size: .75rem !important; line-height: 1.6; }
+.fighter-stats span, .fighter-portrait figcaption, .fighter-roster-heading, .fighter-team { font-size: .75rem; line-height: 1.5; letter-spacing: .1em; }
+.fighter-choice > span:last-child { font-size: .875rem; white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 1000px) and (min-width: 601px) {
+  .fighter-pixel-corner { flex-basis: 64px; }
+  .fighter-pixel-sprite { width: 64px; height: 102px; }
+  .fighter-portrait > img { width: calc(100% - 72px); }
+  .fighter-pixel-floor { width: 50px; }
+}
+@media (max-width: 600px) {
+  .fighter-pixel-corner { flex-basis: 72px; margin-bottom: 20px; }
+  .fighter-pixel-sprite { width: 72px; height: 115px; }
+  .fighter-portrait > img { width: calc(100% - 80px); height: 340px; }
+  .fighter-pixel-floor { width: 56px; }
+  .fighter-stats { gap: 28px; flex-wrap: wrap; }
+  .fighter-choice > span:last-child { font-size: .875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fighter-choice, .fighter-choice .arcade-avatar { transition: none; }
+  .fighter-choice:hover { transform: none; }
+}
+
