@@ -1,0 +1,47 @@
+.fighter-stage { scroll-margin-top: 100px; overflow: hidden; }
+.fighter-portrait > img { min-width: 0; }
+.fighter-info { min-width: 0; }
+.fighter-performance { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; border-bottom: 1px solid #ffffff18; padding-bottom: 16px; }
+.fighter-stats { border: 0; padding: 0; gap: 26px; flex-shrink: 0; }
+.fighter-training { flex: 1 0 190px; max-width: 260px; min-width: 0; }
+.fighter-arena { position: relative; height: 145px; width: 200px; margin: 0 auto; isolation: isolate; }
+.fighter-training-button { appearance: none; position: absolute; left: 20px; bottom: 0; width: 130px; height: 145px; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; z-index: 2; }
+.fighter-training-button:focus-visible { outline: 2px solid #dbbb80; outline-offset: 3px; border-radius: 6px; }
+.training-fighter, .training-bag { display: block; position: absolute; width: 130px; height: 145px; background-image: url('/assets/competidores/training-sprite.png'); background-size: 434.4px 144.8px; background-repeat: no-repeat; image-rendering: pixelated; pointer-events: none; }
+.training-fighter { inset: 0; width: 110px; transform-origin: 48px 80px; background-position: 0 0; animation: training-punch 1.2s steps(1, end) infinite; }
+.training-bag { left: 128px; bottom: 0; width: 44px; background-position: -374px 0; transform-origin: 50% 12%; animation: training-bag-swing 1.2s ease-out infinite; }
+.fighter-arena::after { content: ''; position: absolute; left: 20px; right: 15px; bottom: 10px; height: 2px; background: linear-gradient(90deg, transparent, #b99454, transparent); z-index: -1; }
+.fighter-training-hint { margin: 5px 0 0; font-size: .75rem; line-height: 1.5; text-align: center; color: #bcb0a1; }
+@keyframes training-punch { 0%, 42%, 83%, 100% { background-position: 0 0; transform: translateX(0); } 24%, 65% { background-position: -100.6px 0; transform: translateX(8px); } }
+@keyframes training-bag-swing { 0%, 23%, 60%, 100% { transform: rotate(0); } 32%, 74% { transform: rotate(-9deg); } 48%, 89% { transform: rotate(3deg); } }
+.fighter-arena[data-action='kick'] .training-fighter { width: 130px; background-position: -214px 0; animation: training-kick .62s ease-out both; }
+.fighter-arena[data-action='kick'] .training-bag { animation: training-bag-kick .62s ease-out both; }
+@keyframes training-kick { 0% { transform: translateX(-4px); } 30%, 55% { transform: translateX(4px); } 100% { transform: translateX(0); } }
+@keyframes training-bag-kick { 0%, 20% { transform: rotate(0); } 45% { transform: rotate(-22deg); } 75% { transform: rotate(8deg); } 100% { transform: rotate(0); } }
+.fighter-arena[data-action='flip'] .training-fighter { background-position: 0 0; animation: training-backflip .95s ease-in-out both; }
+.fighter-arena[data-action='flip'] .training-bag { animation: none; transform: rotate(0); }
+@keyframes training-backflip { 0% { transform: translate(0, 0) rotate(0); } 20% { transform: translate(-8px, -24px) rotate(-60deg); } 50% { transform: translate(-22px, -46px) rotate(-190deg); } 80% { transform: translate(-10px, -20px) rotate(-310deg); } 100% { transform: translate(0, 0) rotate(-360deg); } }
+.motion-paused .fighter-arena[data-action='punch'] .training-fighter,
+.motion-paused .fighter-arena[data-action='punch'] .training-bag { animation-play-state: paused; }
+.fighter-motion-controls { display: flex; justify-content: flex-end; margin-top: 14px; }
+.fighter-motion-toggle { font: inherit; font-size: .875rem; min-height: 44px; padding: 9px 14px; border: 1px solid #695353; border-radius: 3px; background: #171318; color: #d8ccbe; cursor: pointer; }
+.fighter-motion-toggle:hover { background: #2c1b21; border-color: #d34b57; }
+.fighter-motion-toggle:focus-visible { outline: 3px solid #f1d7a3; outline-offset: 4px; }
+.fighter-choice { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.fighter-choice .arcade-avatar { transition: filter .2s ease; }
+.fighter-choice:hover .arcade-avatar { filter: brightness(1.15); }
+.fighters-heading > p, .fighter-info > p:not(.fighters-eyebrow) { font-size: 1rem; }
+.fighters-eyebrow { font-size: .75rem !important; line-height: 1.6; }
+.fighter-stats span, .fighter-portrait figcaption, .fighter-roster-heading, .fighter-team { font-size: .75rem; line-height: 1.5; letter-spacing: .1em; }
+.fighter-choice > span:last-child { font-size: .875rem; white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .fighter-portrait > img { height: 340px; }
+  .fighter-performance { gap: 12px; }
+  .fighter-training { flex-basis: 160px; }
+  .fighter-choice > span:last-child { font-size: .875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fighter-choice, .fighter-choice .arcade-avatar { transition: none; }
+  .fighter-choice:hover { transform: none; }
+  .fighter-arena[data-action='flip'] .training-fighter, .fighter-arena[data-action='kick'] .training-fighter, .fighter-arena[data-action='kick'] .training-bag { animation: none; }
+}
