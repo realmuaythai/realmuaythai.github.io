@@ -42,3 +42,12 @@
   .fighter-choice:hover { transform: none; }
   .fighter-arena[data-action='kick'] .training-fighter, .fighter-arena[data-action='kick'] .training-bag { animation: none; }
 }
+
+/* Keep the championship call-to-action intact while replacing its arrow with the supplied elephant logo. */
+.championship-register > span:last-child {
+  background-image: url('/assets/real/elephant-logo-championship.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 86% auto;
+}
+.championship-register:hover > span:last-child { transform: none; }
