@@ -45,9 +45,9 @@
 
 /* Keep the championship call-to-action intact while replacing its arrow with the supplied elephant logo. */
 .championship-register > span:last-child {
-  background-image: url('/assets/real/elephant-logo-championship.png');
+  background-image: url('/assets/real/elephant-logo-championship-full.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 86% auto;
+  background-size: cover;
 }
 .championship-register:hover > span:last-child { transform: none; }
