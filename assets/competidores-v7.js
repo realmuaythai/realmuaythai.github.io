@@ -25,18 +25,18 @@ const realFighters = [
   },
   {
     "name": "Izabela",
-    "fights": 4,
-    "belts": null,
+    "fights": 5,
+    "belts": 1,
     "quote": "O começo de uma história também merece fazer barulho.",
-    "description": "Izabela representa a Real Muay Thai com 4 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
-    "image": "/assets/competidores/04.webp"
+    "description": "Izabela representa a Real Muay Thai com 5 lutas registradas em sua trajetória. Com 1 cinturão conquistado, seu nome faz parte das conquistas da equipe.",
+    "image": "/assets/competidores/isabela-foto-v8.png"
   },
   {
     "name": "Wendel",
-    "fights": 4,
+    "fights": 5,
     "belts": null,
     "quote": "O próximo desafio começa antes do primeiro gongo.",
-    "description": "Wendel representa a Real Muay Thai com 4 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
+    "description": "Wendel representa a Real Muay Thai com 5 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
     "image": "/assets/competidores/05.webp"
   },
   {
