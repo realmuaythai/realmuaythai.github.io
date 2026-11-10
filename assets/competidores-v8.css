@@ -3,10 +3,12 @@
 .fighter-info { min-width: 0; }
 .fighter-performance { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; border-bottom: 1px solid #ffffff18; padding-bottom: 16px; }
 .fighter-stats { border: 0; padding: 0; gap: 26px; flex-shrink: 0; }
-.fighter-training { flex: 1 0 200px; max-width: 280px; min-width: 0; }
-.fighter-arena { width: min(100%, 215px); margin: 0 auto; }
+.fighter-training { flex: 1 0 200px; max-width: 256px; min-width: 0; }
+.fighter-arena { width: min(100%, 256px); margin: 0 auto; }
 .fighter-training-button { appearance: none; display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-.training-svg { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
+.training-sprite { display: block; width: 100%; aspect-ratio: 256 / 282; background: url('/assets/competidores/elephant-sprite.png') 0 0 / 800% 100% no-repeat; image-rendering: pixelated; pointer-events: none; }
+.training-sprite.is-hit { animation: training-hit .3s steps(1, end); }
+@keyframes training-hit { 0% { transform: translateX(5px) scale(1.03); } 30% { transform: translateX(-3px); } 60% { transform: translateX(2px); } 100% { transform: none; } }
 .fighter-training-button:focus-visible { outline: 2px solid #dbbb80; outline-offset: 3px; border-radius: 6px; }
 .fighter-training-hint { margin: 5px 0 0; font-size: .75rem; line-height: 1.5; text-align: center; color: #bcb0a1; }
 .fighter-motion-controls { display: flex; justify-content: flex-end; margin-top: 14px; }
@@ -27,6 +29,7 @@
   .fighter-choice > span:last-child { font-size: .875rem; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .training-sprite.is-hit { animation: none; }
   .fighter-choice, .fighter-choice .arcade-avatar { transition: none; }
   .fighter-choice:hover { transform: none; }
 }
