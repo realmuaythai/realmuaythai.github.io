@@ -1,7 +1,8 @@
 .fighter-stage { scroll-margin-top: 100px; overflow: hidden; }
 .fighter-portrait { overflow: hidden; isolation: isolate; }
 .fighter-portrait::before { content: ''; position: absolute; inset: -60px; z-index: -1; background: var(--fighter-photo) center / cover no-repeat; filter: blur(36px) brightness(.34); }
-.fighter-portrait > img { min-width: 0; position: relative; }
+.fighter-portrait { min-height: 520px; padding: 0; }
+.fighter-portrait > img { min-width: 0; position: absolute; inset: 12px 12px 46px; width: calc(100% - 24px); height: calc(100% - 58px); }
 .fighter-portrait figcaption { text-shadow: 0 1px 3px #000c; }
 .fighter-info { min-width: 0; }
 .fighter-performance { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; border-bottom: 1px solid #ffffff18; padding-bottom: 16px; }
@@ -26,7 +27,8 @@
 .fighter-stats span, .fighter-portrait figcaption, .fighter-roster-heading, .fighter-team { font-size: .75rem; line-height: 1.5; letter-spacing: .1em; }
 .fighter-choice > span:last-child { font-size: .875rem; white-space: normal; overflow-wrap: anywhere; }
 @media (max-width: 600px) {
-  .fighter-portrait > img { height: 340px; }
+  .fighter-portrait { min-height: 460px; padding: 0; }
+  .fighter-portrait > img { height: calc(100% - 58px); }
   .fighter-performance { gap: 12px; }
   .fighter-training { flex-basis: 160px; }
   .fighter-choice > span:last-child { font-size: .875rem; }
