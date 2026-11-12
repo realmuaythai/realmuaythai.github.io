@@ -1,6 +1,6 @@
 .fighter-stage { scroll-margin-top: 100px; overflow: hidden; }
 .fighter-portrait { overflow: hidden; isolation: isolate; }
-.fighter-portrait::before { content: ''; position: absolute; inset: -40px; z-index: -1; background: var(--fighter-photo) center / cover no-repeat; filter: blur(24px) brightness(.5); }
+.fighter-portrait::before { content: ''; position: absolute; inset: -60px; z-index: -1; background: var(--fighter-photo) center / cover no-repeat; filter: blur(36px) brightness(.34); }
 .fighter-portrait > img { min-width: 0; position: relative; }
 .fighter-portrait figcaption { text-shadow: 0 1px 3px #000c; }
 .fighter-info { min-width: 0; }
