@@ -1,5 +1,8 @@
 .fighter-stage { scroll-margin-top: 100px; overflow: hidden; }
-.fighter-portrait > img { min-width: 0; }
+.fighter-portrait { overflow: hidden; isolation: isolate; }
+.fighter-portrait::before { content: ''; position: absolute; inset: -40px; z-index: -1; background: var(--fighter-photo) center / cover no-repeat; filter: blur(24px) brightness(.5); }
+.fighter-portrait > img { min-width: 0; position: relative; }
+.fighter-portrait figcaption { text-shadow: 0 1px 3px #000c; }
 .fighter-info { min-width: 0; }
 .fighter-performance { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; border-bottom: 1px solid #ffffff18; padding-bottom: 16px; }
 .fighter-stats { border: 0; padding: 0; gap: 26px; flex-shrink: 0; }

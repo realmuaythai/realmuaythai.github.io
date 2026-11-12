@@ -158,6 +158,8 @@ const realFighters = [
     const set = (id, value) => { section.querySelector('#' + id).textContent = value; };
     const img = section.querySelector('#fighter-photo');
     img.src = f.image; img.alt = f.name;
+    // Blurred copy of the photo fills the empty space around it.
+    img.parentElement.style.setProperty('--fighter-photo', `url('${f.image.replace('.webp', '-mini.webp')}')`);
     set('fighter-name', f.name);
     set('fighter-fights', f.fights);
     set('fighter-fights-label', f.fights === 1 ? 'LUTA' : 'LUTAS');
