@@ -9,18 +9,18 @@ const realFighters = [
   },
   {
     "name": "Samuel",
-    "fights": 18,
+    "fights": 19,
     "belts": 2,
     "quote": "A experiência entra no ringue. A próxima conquista começa no treino.",
-    "description": "Samuel representa a Real Muay Thai com 18 lutas registradas em sua trajetória. Com 2 cinturões conquistados, seu nome faz parte das conquistas da equipe.",
+    "description": "Samuel representa a Real Muay Thai com 19 lutas registradas em sua trajetória. Com 2 cinturões conquistados, seu nome faz parte das conquistas da equipe.",
     "image": "/assets/competidores/02.webp"
   },
   {
     "name": "TH",
-    "fights": 13,
+    "fights": 14,
     "belts": null,
     "quote": "Cada round deixa uma lição. Cada treino abre um caminho.",
-    "description": "TH representa a Real Muay Thai com 13 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
+    "description": "TH representa a Real Muay Thai com 14 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
     "image": "/assets/competidores/03.webp"
   },
   {
@@ -33,10 +33,10 @@ const realFighters = [
   },
   {
     "name": "Wendel",
-    "fights": 5,
+    "fights": 6,
     "belts": null,
     "quote": "O próximo desafio começa antes do primeiro gongo.",
-    "description": "Wendel representa a Real Muay Thai com 5 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
+    "description": "Wendel representa a Real Muay Thai com 6 lutas registradas em sua trajetória. Uma história que faz parte da nossa equipe, um encontro de cada vez.",
     "image": "/assets/competidores/05.webp"
   },
   {
